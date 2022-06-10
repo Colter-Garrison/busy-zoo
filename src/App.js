@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import OpenClosedSign from './OpenClosedSign';
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
             <button onClick={() => setLionSize(lionSize - 10)}>Shrink Lion</button>
           </div>
         </div>
+        <OpenClosedSign isOpen={isOpen} />
+        <button onClick={() => setIsOpen(!isOpen)}>Toggle Zoo</button>
       </header>
     </div>
   );
