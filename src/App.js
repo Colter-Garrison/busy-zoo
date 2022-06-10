@@ -9,6 +9,26 @@ function App() {
   const [unicornSize, setUnicornSize] = useState(20);
   const [lionSize, setLionSize] = useState(20);
   
+  function handleDogClick() {
+    animals.push('dog');
+    setAnimals(animals.slice());
+  }
+
+  function handleCrocodileClick() {
+    animals.push('crocodile');
+    setAnimals(animals.slice());
+  }
+
+  function handleRatClick() {
+    animals.push('rat');
+    setAnimals(animals.slice());
+  }
+
+  function handleBearClick() {
+    animals.push('bear');
+    setAnimals(animals.slice());
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -27,10 +47,10 @@ function App() {
         <OpenClosedSign isOpen={isOpen} />
         <button onClick={() => setIsOpen(!isOpen)}>Toggle Zoo</button>
         <AnimalList animals={animals} />
-        <button>Dog</button>
-        <button>Crocodile</button>
-        <button>Rat</button>
-        <button>Bear</button>
+        <button onClick={handleDogClick}>Dog</button>
+        <button onClick={handleCrocodileClick}>Crocodile</button>
+        <button onClick={handleRatClick}>Rat</button>
+        <button onClick={handleBearClick}>Bear</button>
       </header>
     </div>
   );
