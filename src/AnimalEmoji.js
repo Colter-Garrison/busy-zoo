@@ -1,10 +1,10 @@
 export default function AnimalEmoji({ animal }) {
   return (
     <div>
-      {animal === 'dog' && '🐕'}
-      {animal === 'crocodile' && '🐊'}
-      {animal === 'rat' && '🐀'}
-      {animal === 'bear' && '🐻'}
+      {animal === 'elf' && '🧝'}
+      {animal === 'wizard' && '🧙‍♂️'}
+      {animal === 'troll' && '🧌'}
+      {animal === 'fairy' && '🧚'}
     </div>
   );
 }

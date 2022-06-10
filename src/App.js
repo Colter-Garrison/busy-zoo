@@ -5,27 +5,32 @@ import AnimalList from './AnimalList';
 
 function App() {
   const [isOpen, setIsOpen] = useState(true);
-  const [animals, setAnimals] = useState(['dog', 'crocodile', 'rat', 'bear']);
-  const [unicornSize, setUnicornSize] = useState(20);
-  const [lionSize, setLionSize] = useState(20);
+  const [animals, setAnimals] = useState(['elf', 'wizard', 'troll', 'fairy']);
+  const [wizardSize, setWizardSize] = useState(40);
+  const [monsterSize, setMonsterSize] = useState(40);
   
-  function handleDogClick() {
-    animals.push('dog');
+  function handleElfClick() {
+    animals.push('elf');
     setAnimals(animals.slice());
   }
 
-  function handleCrocodileClick() {
-    animals.push('crocodile');
+  function handleWizardClick() {
+    animals.push('wizard');
     setAnimals(animals.slice());
   }
 
-  function handleRatClick() {
-    animals.push('rat');
+  function handleTrollClick() {
+    animals.push('troll');
     setAnimals(animals.slice());
   }
 
-  function handleBearClick() {
-    animals.push('bear');
+  function handleFairyClick() {
+    animals.push('fairy');
+    setAnimals(animals.slice());
+  }
+
+  function handleDelete() {
+    animals.pop();
     setAnimals(animals.slice());
   }
 
@@ -34,23 +39,26 @@ function App() {
       <header className="App-header">
         <div className='fight'>
           <div className='competitor'>
-            <p style={{ fontSize: `${unicornSize}px` }}>🦄</p>
-            <button onClick={() => setUnicornSize(unicornSize + 10)}>Grow Unicorn</button>
-            <button onClick={() => setUnicornSize(unicornSize - 10)}>Shrink Unicorn</button>
+            <p style={{ fontSize: `${wizardSize}px` }}>🧙‍♂️</p>
+            <button onClick={() => setWizardSize(wizardSize + 10)}>Gandalf hit the Balrog!</button>
+            <button onClick={() => setWizardSize(wizardSize - 10)}>The Balrog hit Gandalf!</button>
           </div>
           <div className='competitor'>
-            <p style={{ fontSize: `${lionSize}px` }}>🦁</p>
-            <button onClick={() => setLionSize(lionSize + 10)}>Grow Lion</button>
-            <button onClick={() => setLionSize(lionSize - 10)}>Shrink Lion</button>
+            <p style={{ fontSize: `${monsterSize}px` }}>🧌</p>
+            <button onClick={() => setMonsterSize(monsterSize + 10)}>The Balrog hit Gandalf!</button>
+            <button onClick={() => setMonsterSize(monsterSize - 10)}>Gandalf hit the Balrog!</button>
           </div>
         </div>
         <OpenClosedSign isOpen={isOpen} />
-        <button onClick={() => setIsOpen(!isOpen)}>Toggle Zoo</button>
-        <AnimalList animals={animals} />
-        <button onClick={handleDogClick}>Dog</button>
-        <button onClick={handleCrocodileClick}>Crocodile</button>
-        <button onClick={handleRatClick}>Rat</button>
-        <button onClick={handleBearClick}>Bear</button>
+        <button onClick={() => setIsOpen(!isOpen)}>Gandalf says</button>
+        <div className='parade-button'>
+          <AnimalList animals={animals} />
+          <button onClick={handleElfClick}>Elf</button>
+          <button onClick={handleWizardClick}>Wizard</button>
+          <button onClick={handleTrollClick}>Troll</button>
+          <button onClick={handleFairyClick}>Fairy</button>
+          <button onClick={handleDelete}>Bye Bye</button>
+        </div>
       </header>
     </div>
   );

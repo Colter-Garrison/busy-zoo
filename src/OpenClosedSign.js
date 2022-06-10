@@ -3,8 +3,8 @@ export default function OpenClosedSign({ isOpen }) {
     <div className={isOpen ? 'open' : 'closed'}>
       {
         isOpen
-          ? <h3>We are Open!</h3>
-          : <h3>We are closed! Go Away!</h3>
+          ? <h3>Speak Friend and Enter!</h3>
+          : <h3>Fly You Fools!</h3>
       }
     </div>
   );
