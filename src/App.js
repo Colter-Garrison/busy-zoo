@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import OpenClosedSign from './OpenClosedSign';
-
+import AnimalList from './AnimalList';
 
 function App() {
   const [isOpen, setIsOpen] = useState(true);
@@ -26,6 +26,11 @@ function App() {
         </div>
         <OpenClosedSign isOpen={isOpen} />
         <button onClick={() => setIsOpen(!isOpen)}>Toggle Zoo</button>
+        <AnimalList animals={animals} />
+        <button>Dog</button>
+        <button>Crocodile</button>
+        <button>Rat</button>
+        <button>Bear</button>
       </header>
     </div>
   );
