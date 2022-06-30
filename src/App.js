@@ -45,8 +45,8 @@ function App() {
           </div>
           <div className='competitor'>
             <p style={{ fontSize: `${monsterSize}px` }}>🧌</p>
-            <button onClick={() => setMonsterSize(monsterSize + 10)}>The Balrog hit Gandalf!</button>
-            <button onClick={() => setMonsterSize(monsterSize - 10)}>Gandalf hit the Balrog!</button>
+            <button onClick={() => setMonsterSize(monsterSize + 10)}>The Balrog hit Gandalf!!</button>
+            <button onClick={() => setMonsterSize(monsterSize - 10)}>Gandalf hit the Balrog!!</button>
           </div>
         </div>
         <OpenClosedSign isOpen={isOpen} />
