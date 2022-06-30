@@ -1,67 +1,29 @@
-import { useState } from 'react';
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link } from 'react-router-dom';
 import './App.css';
-import OpenClosedSign from './OpenClosedSign';
-import AnimalList from './AnimalList';
-import { CustomButton } from './CustomButton';
+import Admin from './Admin';
+import HomePage from './HomePage';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(true);
-  const [animals, setAnimals] = useState(['elf', 'wizard', 'troll', 'fairy']);
-  const [wizardSize, setWizardSize] = useState(40);
-  const [monsterSize, setMonsterSize] = useState(40);
-  
-  function handleElfClick() {
-    animals.push('elf');
-    setAnimals(animals.slice());
-  }
-
-  function handleWizardClick() {
-    animals.push('wizard');
-    setAnimals(animals.slice());
-  }
-
-  function handleTrollClick() {
-    animals.push('troll');
-    setAnimals(animals.slice());
-  }
-
-  function handleFairyClick() {
-    animals.push('fairy');
-    setAnimals(animals.slice());
-  }
-
-  function handleDelete() {
-    animals.pop();
-    setAnimals(animals.slice());
-  }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className='fight'>
-          <div className='competitor'>
-            <p style={{ fontSize: `${wizardSize}px` }}>🧙‍♂️</p>
-            <CustomButton onClick={() => setWizardSize(wizardSize + 10)}>Gandalf hit the Balrog!</CustomButton>
-            <CustomButton onClick={() => setWizardSize(wizardSize - 10)}>The Balrog hit Gandalf!</CustomButton>
-          </div>
-          <div className='competitor'>
-            <p style={{ fontSize: `${monsterSize}px` }}>🧌</p>
-            <CustomButton onClick={() => setMonsterSize(monsterSize + 10)}>The Balrog hit Gandalf!!</CustomButton>
-            <CustomButton onClick={() => setMonsterSize(monsterSize - 10)}>Gandalf hit the Balrog!!</CustomButton>
-          </div>
-        </div>
-        <OpenClosedSign isOpen={isOpen} />
-        <CustomButton onClick={() => setIsOpen(!isOpen)}>Gandalf says</CustomButton>
-        <div className='parade-button'>
-          <AnimalList animals={animals} />
-          <CustomButton onClick={handleElfClick}>Elf</CustomButton>
-          <CustomButton onClick={handleWizardClick}>Wizard</CustomButton>
-          <CustomButton onClick={handleTrollClick}>Troll</CustomButton>
-          <CustomButton onClick={handleFairyClick}>Fairy</CustomButton>
-          <CustomButton onClick={handleDelete}>Bye Bye</CustomButton>
-        </div>
-      </header>
-    </div>
+    <Router>
+      <Link to='/Admin'>Admin Page</Link>
+      <Link to='/'>Home Page</Link> 
+      <Switch>
+        <Route exact path='/Admin'>
+          <Admin />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route exact path='/'>
+          <HomePage />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
