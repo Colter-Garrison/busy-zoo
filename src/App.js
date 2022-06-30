@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import OpenClosedSign from './OpenClosedSign';
 import AnimalList from './AnimalList';
+import { CustomButton } from './CustomButton';
 
 function App() {
   const [isOpen, setIsOpen] = useState(true);
@@ -40,24 +41,24 @@ function App() {
         <div className='fight'>
           <div className='competitor'>
             <p style={{ fontSize: `${wizardSize}px` }}>🧙‍♂️</p>
-            <button onClick={() => setWizardSize(wizardSize + 10)}>Gandalf hit the Balrog!</button>
-            <button onClick={() => setWizardSize(wizardSize - 10)}>The Balrog hit Gandalf!</button>
+            <CustomButton onClick={() => setWizardSize(wizardSize + 10)}>Gandalf hit the Balrog!</CustomButton>
+            <CustomButton onClick={() => setWizardSize(wizardSize - 10)}>The Balrog hit Gandalf!</CustomButton>
           </div>
           <div className='competitor'>
             <p style={{ fontSize: `${monsterSize}px` }}>🧌</p>
-            <button onClick={() => setMonsterSize(monsterSize + 10)}>The Balrog hit Gandalf!!</button>
-            <button onClick={() => setMonsterSize(monsterSize - 10)}>Gandalf hit the Balrog!!</button>
+            <CustomButton onClick={() => setMonsterSize(monsterSize + 10)}>The Balrog hit Gandalf!!</CustomButton>
+            <CustomButton onClick={() => setMonsterSize(monsterSize - 10)}>Gandalf hit the Balrog!!</CustomButton>
           </div>
         </div>
         <OpenClosedSign isOpen={isOpen} />
-        <button onClick={() => setIsOpen(!isOpen)}>Gandalf says</button>
+        <CustomButton onClick={() => setIsOpen(!isOpen)}>Gandalf says</CustomButton>
         <div className='parade-button'>
           <AnimalList animals={animals} />
-          <button onClick={handleElfClick}>Elf</button>
-          <button onClick={handleWizardClick}>Wizard</button>
-          <button onClick={handleTrollClick}>Troll</button>
-          <button onClick={handleFairyClick}>Fairy</button>
-          <button onClick={handleDelete}>Bye Bye</button>
+          <CustomButton onClick={handleElfClick}>Elf</CustomButton>
+          <CustomButton onClick={handleWizardClick}>Wizard</CustomButton>
+          <CustomButton onClick={handleTrollClick}>Troll</CustomButton>
+          <CustomButton onClick={handleFairyClick}>Fairy</CustomButton>
+          <CustomButton onClick={handleDelete}>Bye Bye</CustomButton>
         </div>
       </header>
     </div>
