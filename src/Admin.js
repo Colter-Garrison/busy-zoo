@@ -1,7 +1,8 @@
 import React from 'react';
+import MyTable from './MyTable';
 
 export default function admin() {
   return (
-    <div>admin</div>
+    <MyTable />
   );
 }

@@ -11,16 +11,16 @@ function App() {
 
   return (
     <Router>
-      <Link to='/Admin'>Admin Page</Link>
       <Link to='/'>Home Page</Link> 
-      <Switch>
-        <Route exact path='/Admin'>
-          <Admin />
-        </Route>
-      </Switch>
+      <Link to='/Admin'>Admin Page</Link>
       <Switch>
         <Route exact path='/'>
           <HomePage />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route exact path='/Admin'>
+          <Admin />
         </Route>
       </Switch>
     </Router>
