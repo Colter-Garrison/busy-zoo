@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+.fight {
+  display: flex;
+  justify-content: space-around;
+}
+
+.competitor {
+  margin: 20px;
+}
+
+.parade {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+button {
+  margin: 3px;
+}
